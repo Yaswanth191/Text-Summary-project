@@ -1,40 +1,31 @@
-artifacts_root: C:/TextSummary/artifacts
+artifacts_root: C:\Users\YASWANTH\Desktop\Text summary project\Text-Summary-project-ongoing/artifacts
 
 data_ingestion:
   root_dir: C:/TextSummary/artifacts/data_ingestion
   source_URL: https://github.com/Yaswanth191/Datasets/raw/refs/heads/main/summarizer-data.zip
-  local_data_file: C:/TextSummary/artifacts/data_ingestion/data.zip
-  unzip_dir: C:/TextSummary/artifacts/data_ingestion
+  local_data_file: C:\Users\YASWANTH\Desktop\Text summary project\Text-Summary-project-ongoing/artifacts/data_ingestion/data.zip
+  unzip_dir: C:\Users\YASWANTH\Desktop\Text summary project\Text-Summary-project-ongoing/artifacts/data_ingestion
 
 data_validation:
-  root_dir: C:/TextSummary/artifacts/data_validation
-  STATUS_FILE: C:/TextSummary/artifacts/data_validation/status.txt
+  root_dir: C:\Users\YASWANTH\Desktop\Text summary project\Text-Summary-project-ongoing/artifacts/data_validation
+  STATUS_FILE: C:\Users\YASWANTH\Desktop\Text summary project\Text-Summary-project-ongoing/artifacts/data_validation/status.txt
   ALL_REQUIRED_FILES: ["train", "test", "validation"]
 
 data_transformation:
-  root_dir: C:/TextSummary/artifacts/data_transformation
-  data_path: C:/TextSummary/artifacts/data_ingestion/samsum_dataset
+  root_dir: C:\Users\YASWANTH\Desktop\Text summary project\Text-Summary-project-ongoing/artifacts/data_transformation
+  data_path: C:\Users\YASWANTH\Desktop\Text summary project\Text-Summary-project-ongoing/artifacts/data_ingestion/samsum_dataset
   tokenizer_name: google/pegasus-cnn_dailymail
 
 model_trainer:
-  root_dir: C:/TextSummary/artifacts/model_trainer
-  data_path: C:/TextSummary/artifacts/data_transformation/samsum_dataset
+  root_dir: C:\Users\YASWANTH\Desktop\Text summary project\Text-Summary-project-ongoing/artifacts/model_trainer
+  data_path: C:\Users\YASWANTH\Desktop\Text summary project\Text-Summary-project-ongoing/artifacts/data_transformation/samsum_dataset
   model_ckpt: google/pegasus-cnn_dailymail
 
 model_evaluation:
-  root_dir: C:/TextSummary/artifacts/model_evaluation
-  data_path: C:/TextSummary/artifacts/data_transformation/samsum_dataset
-  model_path: C:/TextSummary/artifacts/model_trainer/pegasus-samsum-model
-  tokenizer_path: C:/TextSummary/artifacts/model_trainer/tokenizer
-  metric_file_name: C:/TextSummary/artifacts/model_evaluation/metrics.csv
+  root_dir: C:\Users\YASWANTH\Desktop\Text summary project\Text-Summary-project-ongoing/artifacts/model_evaluation
+  data_path: C:\Users\YASWANTH\Desktop\Text summary project\Text-Summary-project-ongoing/artifacts/data_transformation/samsum_dataset
+  model_path: C:\Users\YASWANTH\Desktop\Text summary project\Text-Summary-project-ongoing/artifacts/model_trainer/pegasus-samsum-model
+  tokenizer_path: C:\Users\YASWANTH\Desktop\Text summary project\Text-Summary-project-ongoing/artifacts/model_trainer/tokenizer
+  metric_file_name: C:\Users\YASWANTH\Desktop\Text summary project\Text-Summary-project-ongoing/artifacts/model_evaluation/metrics.csv
 
-TrainingArguments:
-  num_train_epochs: 1
-  warmup_steps: 500
-  per_device_train_batch_size: 1
-  weight_decay: 0.01
-  logging_steps: 10
-  evaluation_strategy: steps
-  eval_steps: 500
-  save_steps: 1e6
-  gradient_accumulation_steps: 16
+

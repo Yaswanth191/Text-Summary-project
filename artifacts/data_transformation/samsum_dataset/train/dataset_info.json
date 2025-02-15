@@ -14,40 +14,54 @@
   "features": {
     "id": {
       "dtype": "string",
+      "id": null,
       "_type": "Value"
     },
     "dialogue": {
       "dtype": "string",
+      "id": null,
       "_type": "Value"
     },
     "summary": {
       "dtype": "string",
+      "id": null,
       "_type": "Value"
     },
     "input_ids": {
       "feature": {
         "dtype": "int32",
+        "id": null,
         "_type": "Value"
       },
+      "length": -1,
+      "id": null,
       "_type": "Sequence"
     },
     "attention_mask": {
       "feature": {
         "dtype": "int8",
+        "id": null,
         "_type": "Value"
       },
+      "length": -1,
+      "id": null,
       "_type": "Sequence"
     },
     "labels": {
       "feature": {
         "dtype": "int64",
+        "id": null,
         "_type": "Value"
       },
+      "length": -1,
+      "id": null,
       "_type": "Sequence"
     }
   },
   "homepage": "https://arxiv.org/abs/1911.12237",
   "license": "CC BY-NC-ND 4.0",
+  "post_processed": null,
+  "post_processing_size": null,
   "size_in_bytes": 13474116,
   "splits": {
     "train": {
@@ -69,8 +83,11 @@
       "dataset_name": "samsum"
     }
   },
+  "supervised_keys": null,
+  "task_templates": null,
   "version": {
     "version_str": "0.0.0",
+    "description": null,
     "major": 0,
     "minor": 0,
     "patch": 0
