@@ -60,26 +60,29 @@ class ConfigurationManager:        #
     def get_model_trainer_config(self) -> ModelTrainerConfig:
         config = self.config.model_trainer
         params = self.params.TrainingArguments
+        
+        if params is None:
+         params = {}
 
         create_directories([config.root_dir])
 
         model_trainer_config = ModelTrainerConfig(
-            root_dir=config.root_dir,
-            data_path=config.data_path,
-            model_ckpt = config.model_ckpt,
-            num_train_epochs = params.num_train_epochs,
-            warmup_steps = params.warmup_steps,
-            per_device_train_batch_size = params.per_device_train_batch_size,
-            weight_decay = params.weight_decay,
-            logging_steps = params.logging_steps,
-            evaluation_strategy = params.evaluation_strategy,
-            eval_steps = params.evaluation_strategy,
-            save_steps = params.save_steps,
-            gradient_accumulation_steps = params.gradient_accumulation_steps
-        )
+        root_dir=config.root_dir,
+        data_path=config.data_path,
+        model_ckpt=config.model_ckpt,
+        num_train_epochs = getattr(params, 'num_train_epochs', 3),
+        warmup_steps = getattr(params, 'warmup_steps', 0),
+        per_device_train_batch_size = getattr(params, 'per_device_train_batch_size', 8),
+        weight_decay = getattr(params, 'weight_decay', 0.01),
+        logging_steps = getattr(params, 'logging_steps', 100),
+        evaluation_strategy = getattr(params, 'evaluation_strategy', 'steps'),
+        eval_steps = getattr(params, 'eval_steps', 500),
+        save_steps = getattr(params, 'save_steps', 500),
+        gradient_accumulation_steps = getattr(params, 'gradient_accumulation_steps', 1)
+    )
 
         return model_trainer_config
-    
+
     def get_model_evaluation_config(self) -> ModelEvaluationConfig:
         config = self.config.model_evaluation
 
