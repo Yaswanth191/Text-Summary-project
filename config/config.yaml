@@ -1,31 +1,29 @@
-artifacts_root: C:\Users\YASWANTH\Desktop\Text summary project\Text-Summary-project-ongoing/artifacts
+artifacts_root: /home/ubuntu/Text-Summary-project/artifacts
 
 data_ingestion:
-  root_dir: C:/TextSummary/artifacts/data_ingestion
+  root_dir: artifacts/data_ingestion
   source_URL: https://github.com/Yaswanth191/Datasets/raw/refs/heads/main/summarizer-data.zip
-  local_data_file: C:\Users\YASWANTH\Desktop\Text summary project\Text-Summary-project-ongoing/artifacts/data_ingestion/data.zip
-  unzip_dir: C:\Users\YASWANTH\Desktop\Text summary project\Text-Summary-project-ongoing/artifacts/data_ingestion
+  local_data_file: artifacts/data_ingestion/data.zip
+  unzip_dir: artifacts/data_ingestion
 
 data_validation:
-  root_dir: C:\Users\YASWANTH\Desktop\Text summary project\Text-Summary-project-ongoing/artifacts/data_validation
-  STATUS_FILE: C:\Users\YASWANTH\Desktop\Text summary project\Text-Summary-project-ongoing/artifacts/data_validation/status.txt
+  root_dir: artifacts/data_validation
+  STATUS_FILE: artifacts/data_validation/status.txt
   ALL_REQUIRED_FILES: ["train", "test", "validation"]
 
 data_transformation:
-  root_dir: C:\Users\YASWANTH\Desktop\Text summary project\Text-Summary-project-ongoing/artifacts/data_transformation
-  data_path: C:\Users\YASWANTH\Desktop\Text summary project\Text-Summary-project-ongoing/artifacts/data_ingestion/samsum_dataset
+  root_dir: artifacts/data_transformation
+  data_path: artifacts/data_ingestion/samsum_dataset
   tokenizer_name: google/pegasus-cnn_dailymail
 
 model_trainer:
-  root_dir: C:\Users\YASWANTH\Desktop\Text summary project\Text-Summary-project-ongoing/artifacts/model_trainer
-  data_path: C:\Users\YASWANTH\Desktop\Text summary project\Text-Summary-project-ongoing/artifacts/data_transformation/samsum_dataset
+  root_dir: artifacts/model_trainer
+  data_path: artifacts/data_transformation/samsum_dataset
   model_ckpt: google/pegasus-cnn_dailymail
 
 model_evaluation:
-  root_dir: C:\Users\YASWANTH\Desktop\Text summary project\Text-Summary-project-ongoing/artifacts/model_evaluation
-  data_path: C:\Users\YASWANTH\Desktop\Text summary project\Text-Summary-project-ongoing/artifacts/data_transformation/samsum_dataset
-  model_path: C:\Users\YASWANTH\Desktop\Text summary project\Text-Summary-project-ongoing/artifacts/model_trainer/pegasus-samsum-model
-  tokenizer_path: C:\Users\YASWANTH\Desktop\Text summary project\Text-Summary-project-ongoing\artifacts\model_trainer\checkpoint-3
-  metric_file_name: C:\Users\YASWANTH\Desktop\Text summary project\Text-Summary-project-ongoing/artifacts/model_evaluation/metrics.csv
-
-
+  root_dir: artifacts/model_evaluation
+  data_path: artifacts/data_transformation/samsum_dataset
+  model_path: artifacts/model_trainer/pegasus-samsum-model
+  tokenizer_path: artifacts/model_trainer/checkpoint-3
+  metric_file_name: artifacts/model_evaluation/metrics.csv
